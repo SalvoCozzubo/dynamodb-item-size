@@ -1,14 +1,25 @@
 {
   "name": "dynamodb-item-size",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Calculate the byte size of an object",
   "main": "main.js",
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [],
+  "keywords": [
+    "dynamodb",
+    "aws"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SalvoCozzubo/dynamodb-item-size"
+  },
+  "bugs": {
+    "url": "https://github.com/SalvoCozzubo/dynamodb-item-size/issues",
+    "email": "salvatore.cozzubo@gmail.com"
+  },
   "author": "Salvatore Cozzubo",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
