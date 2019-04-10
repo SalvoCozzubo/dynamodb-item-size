@@ -6,7 +6,8 @@ const typeCheck = (variable) => {
   if (typeof variable === 'object'
           && Array.isArray(variable)) return 'array';
   if (typeof variable === 'object'
-          && !Array.isArray(variable)) return 'object';
+          && Buffer.isBuffer(variable)) return 'binary';
+  if (typeof variable === 'object') return 'object';
   if (typeof variable === 'boolean') return 'boolean';
   return false;
 };
@@ -16,6 +17,8 @@ exports.typeCheck = typeCheck;
 const calculateStringSize = value => value.length;
 
 const calculateKeySize = key => key.length;
+
+const calculateBinarySize = value => value.length;
 
 const calculateNumberSize = (number) => {
   if (!(typeof number === 'number')) return false;
@@ -74,6 +77,8 @@ calculateByType = (variable) => {
       return calculateArraySize(variable);
     case 'object':
       return calculateObjectSize(variable);
+    case 'binary':
+      return calculateBinarySize(variable);
     default:
       return false;
   }
@@ -87,3 +92,4 @@ exports.calculateBooleanSize = calculateBooleanSize;
 exports.calculateNullSize = calculateNullSize;
 exports.calculateObjectSize = calculateObjectSize;
 exports.calculateArraySize = calculateArraySize;
+exports.calculateBinarySize = calculateBinarySize;
