@@ -12,6 +12,7 @@ describe('typeCheck', () => {
     testObject.array = ['element1', 'element2', 'element3'];
     testObject.object = { string: 'abc', integer: 123, boolean: true };
     testObject.null = null;
+    testObject.binary = Buffer.from('abcdefghi');
   });
 
   it('property is string', () => {
@@ -40,5 +41,9 @@ describe('typeCheck', () => {
 
   it('property is null', () => {
     assert(typeCheck(testObject.null) === 'null');
+  });
+
+  it('property is binary', () => {
+    assert(typeCheck(testObject.binary) === 'binary');
   });
 });
