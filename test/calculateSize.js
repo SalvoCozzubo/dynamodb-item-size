@@ -2,7 +2,7 @@ const assert = require('assert');
 const {
   calculateBooleanSize, calculateNullSize, calculateObjectSize,
   calculateArraySize, calculateNumberSize, calculateStringSize,
-  calculateBinarySize,
+  calculateBinarySize, calculateItemSize,
 } = require('../main.js');
 
 
@@ -50,5 +50,9 @@ describe('calculate size', () => {
 
   it('binary', () => {
     assert(calculateBinarySize(testObject.binary) === 9);
+  });
+
+  it('item size', () => {
+    assert(calculateItemSize(testObject) === 136);
   });
 });
