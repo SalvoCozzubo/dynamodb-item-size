@@ -93,3 +93,7 @@ exports.calculateNullSize = calculateNullSize;
 exports.calculateObjectSize = calculateObjectSize;
 exports.calculateArraySize = calculateArraySize;
 exports.calculateBinarySize = calculateBinarySize;
+
+const calculateItemSize = item => calculateObjectSize(item) - 3;
+
+exports.calculateItemSize = calculateItemSize;
