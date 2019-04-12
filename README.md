@@ -13,6 +13,13 @@ npm install dynamodb-item-size
 
 ```javascript
 const { calculateItemSize } = require('dynamodb-item-size');
+
+const obj = {
+  name: 'Salvo',
+  age: 29
+};
+
+const size = calculateItemSize(obj);  // Output: 14
 ```
 
 ## Contributing
